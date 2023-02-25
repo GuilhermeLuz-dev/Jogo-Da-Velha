@@ -28,9 +28,9 @@ h1{
 }
 
 .x::after{
-    content:"\2694";
+    content: "\1F6E1";
 }
 
 .o::after{
-    content: "\1F6E1";
+    content:"\2694";
 }
