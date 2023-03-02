@@ -1,25 +1,90 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-body{
+
+body {
     text-align: center;
+    height: 100vh;
+    background-color: #a9f04d;
+    color: #fff
 }
-h1{
+
+#namePlayer {
+    position: absolute;
+    background-color: #268fbe;
+    width: 300px;
+    height: 350px;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    z-index: 1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#namePlayer  h2{
+    margin: 20px 0 10px 0;
+}
+#namePlayer input{
+    padding: 5px;
+    border: none;
+    width: 70%;
+    height: 30px;
+    box-shadow: 5px 5px 10px #111111dc;
+    border-radius: 5px;
+}
+#namePlayer button{
+    padding: 5px;
+    margin-top: 20px;
+    border: none;
+    width: 30%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #111111dc;
+    cursor: pointer;
+}
+#namePlayer button:hover{
+   background-color: #3ddb8f;
+}
+
+#players{
+    position: absolute;
+    background-color: #2cb8b2;
+    z-index: 1;
+    width: 50%;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #111111dc;
+    transition: all 1s ease-in-out;
+    display: none;
+}
+
+h1 {
     margin: 10px auto 10px auto;
 }
-.square{
+
+.square {
     width: 100px;
     height: 100px;
-    background-color: aqua;
+    background-color: #3ddb8f;
     display: inline-block;
     border-radius: 10px;
     position: relative;
 }
 
-.x, .o{
+.x,
+.o {
     position: absolute;
     font-size: 45px;
     right: 0px;
@@ -27,10 +92,10 @@ h1{
     line-height: 100px;
 }
 
-.x::after{
+.x::after {
     content: "\1F6E1";
 }
 
-.o::after{
-    content:"\2694";
+.o::after {
+    content: "\2694";
 }

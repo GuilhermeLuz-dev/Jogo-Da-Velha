@@ -1,6 +1,7 @@
 let board = ['', '', '', '', '', '', '', '', ''];
 let playerTime = 0;
 let symbols = ['x', 'o'];
+let players = ['Espada', 'Escudo'];
 let gameOver = false;
 let seqWins = [
     [0, 1, 2],

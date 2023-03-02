@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,26 +8,37 @@
     <title>Jogo da Velha</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Jogo Da Velha</h1>
-    <div class="table">
-        <div>
-            <div id="0" class="square"></div>
-            <div id="1" class="square"></div>
-            <div id="2" class="square"></div>
-        </div>
-        <div>
-            <div id="3" class="square"></div>
-            <div id="4" class="square"></div>
-            <div id="5" class="square"></div>
-        </div>
-        <div>
-            <div id="6" class="square"></div>
-            <div id="7" class="square"></div>
-            <div id="8" class="square"></div>
-        </div>
+    <div id="namePlayer">
+        <h2>Jogador 1</h2>
+        <input id="play1" type="text" placeholder="Nome:">
+        <h2>Jogador 2</h2>
+        <input id="play2" type="text" placeholder="Nome:">
+        <button id="buttonJogar">Jogar</button>
     </div>
+
+    <h1 id="players"></h1>
+        <div class="table">
+            <div>
+                <div id="0" class="square"></div>
+                <div id="1" class="square"></div>
+                <div id="2" class="square"></div>
+            </div>
+            <div>
+                <div id="3" class="square"></div>
+                <div id="4" class="square"></div>
+                <div id="5" class="square"></div>
+            </div>
+            <div>
+                <div id="6" class="square"></div>
+                <div id="7" class="square"></div>
+                <div id="8" class="square"></div>
+            </div>
+        </div>
     <script src="game.js"></script>
     <script src="interface.js"></script>
 </body>
+
 </html>
