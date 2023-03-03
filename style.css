@@ -5,20 +5,26 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+@keyframes apear {
+    from{top:10%; opacity:0;};
+    to{top: 20%; opacity: 1;};
+    
+}
+
 body {
     text-align: center;
     height: 100vh;
-    background-color: #a9f04d;
+    background-color: #268fbe;
     color: #fff
 }
 
 #namePlayer {
     position: absolute;
-    background-color: #268fbe;
-    width: 300px;
-    height: 350px;
+    background-color: #3ddb8f;
+    width: 400px;
+    height: 450px;
     left: 50%;
-    top: 10%;
+    top: 5%;
     transform: translateX(-50%);
     z-index: 1;
     border-radius: 10px;
@@ -26,6 +32,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 5px 5px 10px #111111dc;
 }
 
 #namePlayer  h2{
@@ -54,7 +61,7 @@ body {
 
 #players{
     position: absolute;
-    background-color: #2cb8b2;
+    background-color: #3ddb8f;
     z-index: 1;
     width: 50%;
     height: 100px;
@@ -70,6 +77,27 @@ body {
     display: none;
 }
 
+#win{
+    background:#3ddb8f;
+    width: 40%;
+    height: 100px;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top:20%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    border: solid 2px #fff;
+    box-shadow: 5px 5px 10px #111111bd;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 1s ease-in-out;
+    animation: apear .5s ease-in-out  forwards;
+    display: none;
+    line-height: 100px;
+
+}
+
 h1 {
     margin: 10px auto 10px auto;
 }
@@ -77,10 +105,13 @@ h1 {
 .square {
     width: 100px;
     height: 100px;
-    background-color: #3ddb8f;
+    background-color: #551bb3;
     display: inline-block;
     border-radius: 10px;
     position: relative;
+}
+.square:hover{
+    background-color: #411588;
 }
 
 .x,
@@ -98,4 +129,52 @@ h1 {
 
 .o::after {
     content: "\2694";
+}
+
+#buttons{
+    position: absolute;
+    width: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#buttons button{
+    border: none;
+    height: 25px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #1111119d;
+    background-color: #3ddb8f;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+#buttons button:hover{
+    background-color: #2da76c;
+}
+
+#placar{
+    width: 50%;
+    height: 100px;
+    background-color: #551bb3;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #111111bd;
+}
+
+.jogador h2{
+    margin-bottom: 15px;
+}
+
+.jogador p{
+    font-size: 30px;
 }
