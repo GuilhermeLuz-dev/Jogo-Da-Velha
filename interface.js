@@ -58,16 +58,18 @@ function namePlayers() {
         
         aviso.style.display = "inline";
         aviso.firstChild.innerText = `${playersName[0]} será a Espada e ${playersName[1]} será o Escudo!`;
-
-        if(playersName[0] != '' && playersName[1] != ''){
-            document.querySelector(".j1 h2").innerHTML = playersName[0];
-            document.querySelector(".j2 h2").innerHTML = playersName[1];
-        }
-
         
         setTimeout(() => {
-            aviso.style.display = "none";
+            aviso.firstChild.innerHTML = `${playersName[1]} inicia o jogo!`
         }, 2000);
+        setTimeout(()=>{
+            aviso.style.display = "none";
+        }, 3000);
+        
+                if(playersName[0] != '' && playersName[1] != ''){
+                    document.querySelector(".j1 h2").innerHTML = playersName[0];
+                    document.querySelector(".j2 h2").innerHTML = playersName[1];
+                }
 
     })
 }

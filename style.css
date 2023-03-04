@@ -86,7 +86,6 @@ body {
     position: absolute;
     background-color: #268fbe;
     z-index: 1;
-    width: 300px;
     left: 50%;
     top: 20%;
     transform: translateX(-50%);
