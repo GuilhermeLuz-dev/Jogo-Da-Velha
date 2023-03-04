@@ -5,6 +5,7 @@ let playersName = ['',''];
 let gameOver = false;
 let pointPlay1 = 0;
 let pointPlay2 = 0;
+let quantJogadas = 0;
 let seqWins = [
     [0, 1, 2],
     [3, 4, 5],

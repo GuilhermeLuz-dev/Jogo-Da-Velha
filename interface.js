@@ -1,5 +1,8 @@
+let aviso = document.querySelector("#aviso");
+
 document.addEventListener("DOMContentLoaded", () => {
     let squares = document.querySelectorAll(".square");
+    
     namePlayers()
 
     squares.forEach(square => {
@@ -25,6 +28,7 @@ function reiniciar(){
     pointPlay2 = 0;
     jogador1.innerHTML = 0;
     jogador2.innerHTML = 0;
+    quantJogadas = 0;
     document.querySelectorAll('.square').forEach(element=>{
         element.innerHTML = '';
     })
@@ -37,6 +41,7 @@ function novaPartida(){
 
     playerTime = 0;
     gameOver = false;
+    quantJogadas = 0;
     document.querySelectorAll('.square').forEach(element=>{
         element.innerHTML = '';
     })
@@ -47,12 +52,12 @@ function namePlayers() {
         
         playersName[0] = document.querySelector("#play1").value;
         playersName[1] = document.querySelector("#play2").value;
-        let players = document.querySelector("#players");
+        let aviso = document.querySelector("#aviso");
         
         document.querySelector("#namePlayer").style.display = "none";
         
-        players.style.display = "inline";
-        players.innerHTML = `${playersName[0]} será a Espada e ${playersName[1]} será o Escudo`;
+        aviso.style.display = "inline";
+        aviso.firstChild.innerText = `${playersName[0]} será a Espada e ${playersName[1]} será o Escudo!`;
 
         if(playersName[0] != '' && playersName[1] != ''){
             document.querySelector(".j1 h2").innerHTML = playersName[0];
@@ -61,7 +66,7 @@ function namePlayers() {
 
         
         setTimeout(() => {
-            players.style.display = "none";
+            aviso.style.display = "none";
         }, 2000);
 
     })
@@ -69,14 +74,23 @@ function namePlayers() {
 
 function handleClick(position) {
     if (board[position] == '') {
-
+        quantJogadas++
         if (handleMove(position)) {
             setTimeout(() => {
                 
                 handleWin();
-
+                
             }, 10)
         }
+
+        if(quantJogadas == 9 && !handleMove(position)){
+            aviso.firstChild.innerHTML = "Deu empate inicie uma nova partida";
+            aviso.style.display = "inline";
+            setTimeout(()=>{
+                aviso.style.display = "none"
+            }, 2000);
+        }
+
         updadeSquare(position)
     }
 }

@@ -10,17 +10,18 @@
 </head>
 
 <body>
-    <h1>Jogo Da Velha</h1>
-    <div id="namePlayer">
-        <h2>Jogador 1</h2>
-        <input id="play1" type="text" placeholder="Nome:">
-        <h2>Jogador 2</h2>
-        <input id="play2" type="text" placeholder="Nome:">
-        <button id="buttonJogar">Jogar</button>
-    </div>
+    <div id="container">
+        <h1>Jogo Da Velha</h1>
+        <div id="namePlayer">
+            <h2>Jogador 1</h2>
+            <input id="play1" type="text" placeholder="Nome:">
+            <h2>Jogador 2</h2>
+            <input id="play2" type="text" placeholder="Nome:">
+            <button id="buttonJogar">Jogar</button>
+        </div>
 
-    <h1 id="players"></h1>
-    <div id="win"></div>
+        <div id="aviso"><h2></h2></div>
+        <div id="win"></div>
         <div class="table">
             <div>
                 <div id="0" class="square"></div>
@@ -40,12 +41,19 @@
         </div>
         <div id="buttons">
             <button id="novaPart">Nova partida</button>
-            <button id="reiniciar">Reiniciar</button>
+            <button id="reiniciar">Zerar placar</button>
         </div>
         <div id="placar">
-            <div class="jogador j1"><h2>Espada</h2><p id="pj1">0</p></div>
-            <div class="jogador j2"><h2>Escudo</h2><p id="pj2">0</p></div>
+            <div class="jogador j1">
+                <h2>Espada</h2>
+                <p id="pj1">0</p>
+            </div>
+            <div class="jogador j2">
+                <h2>Escudo</h2>
+                <p id="pj2">0</p>
+            </div>
         </div>
+    </div>
     <script src="game.js"></script>
     <script src="interface.js"></script>
 </body>
