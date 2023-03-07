@@ -7,6 +7,10 @@ let squares = document.querySelectorAll(".square");
 document.addEventListener("DOMContentLoaded", () => { //Função que inicia a lógica do joga logo após o carregamento completo da página.
 
     namePlayers() //Pegando os nomes dos jogadores.
+    
+    // Adicionando eventos de click nos botões Nova Partida e Reiniciar.
+    document.querySelector("#novaPart").addEventListener('click', novaPartida);
+    document.querySelector("#reiniciar").addEventListener('click', reiniciar);
 
     squares.forEach(square => { // Adicionando evento de click em cada quadro do tabuleiro do jogo.
         square.addEventListener('click', (event) => {
@@ -15,9 +19,6 @@ document.addEventListener("DOMContentLoaded", () => { //Função que inicia a l�
     });
 })
 
-// Adicionando eventos de click nos botões Nova Partida e Reiniciar.
-document.querySelector("#novaPart").addEventListener('click', novaPartida);
-document.querySelector("#reiniciar").addEventListener('click', reiniciar);
 
 // Função que reinicia todo o jogo, inclusive zerando o placar.
 function reiniciar() {
@@ -87,7 +88,9 @@ function namePlayers() {
 // Função que lida com o click nos quadros.
 function handleClick(position) {
     if (board[position] == '') { // Verificando se o quadro clicado está vazio.
+       
         quantJogadas++ // Contador de jogadas.
+       
         if (handleMove(position)) { //Verificando se a função detectou uma vitória.
             setTimeout(() => {
 
@@ -96,8 +99,8 @@ function handleClick(position) {
             }, 10)
         }
 
-        if (quantJogadas >= 9) { // Verificando a quantidade de jogadas para detectar empate.
-            aviso.firstElementChild.innerHTML = "Deu empate inicie uma nova partida";
+        if (quantJogadas >= 9 && !gameOver) { // Verificando a quantidade de jogadas para detectar empate.
+            aviso.innerHTML = "Deu empate inicie uma nova partida";
             aviso.style.display = "inline";
             setTimeout(() => {
                 aviso.style.display = "none"
